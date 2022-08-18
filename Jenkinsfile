@@ -25,7 +25,7 @@ pipeline {
       }
 
       success {
-        echo 'sukces'
+        echo 'sukces !!!!!!!!!!!!!!!!!!!!!1'
       }
       
       failure {
