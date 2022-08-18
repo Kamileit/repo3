@@ -15,6 +15,21 @@ pipeline {
         
       }
     }
+    
+    post {
+      
+      always { 
+        echo 'zawsze'
+      }
+
+      success {
+        echo 'sukces'
+      }
+      
+      failure {
+        echo 'fail'
+      }
+        
   
   
   
