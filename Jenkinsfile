@@ -7,7 +7,7 @@ pipeline {
       steps {
         
         echo ('Budujemy !!!!!!!!!!!!!!!!!!!')
-        echo ($BRANCH_NAME)
+        sh 'printenv'
       }
     }
         
