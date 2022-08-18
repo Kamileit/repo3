@@ -5,7 +5,9 @@ pipeline {
     
     stage('Build') {
       steps {
-        echo(env.BRANCH_NAME)
+        
+        echo ('Budujemy !!!!!!!!!!!!!!!!!!!')
+        echo (env.BRANCH_NAME)
       }
     }
         
