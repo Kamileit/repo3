@@ -16,7 +16,8 @@ pipeline {
       }
     }
     
-    post {
+    
+  post {
       
       always { 
         echo 'zawsze'
