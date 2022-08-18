@@ -3,11 +3,20 @@ pipeline {
   
   stages {
     
-    stage('Hello') {
+    stage('Build') {
       steps {
-        echo('Hello World')
+        echo('budujemy')
+      }
+    }
+        
+    stage('Test')
+        steps {
+          echo ('testujemy')
         
       }
     }
+  
+  
+  
   }
 }
