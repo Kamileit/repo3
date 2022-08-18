@@ -7,7 +7,7 @@ pipeline {
       steps {
         
         echo ('Budujemy !!!!!!!!!!!!!!!!!!!')
-        echo (env.BRANCH_NAME)
+        echo ($env.BRANCH_NAME)
       }
     }
         
