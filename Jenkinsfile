@@ -6,7 +6,7 @@ pipeline {
     stage('Build') {
       steps {
         
-        echo ('Budujemy !!!!!!!!!!!!!!!!!!!')
+        echo ('Budujemy !!!!!!!!!!!!!!!!!!!' + env.BRANCH_NAME)
         sh 'printenv'
       }
     }
