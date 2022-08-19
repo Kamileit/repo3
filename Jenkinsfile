@@ -18,7 +18,8 @@ pipeline {
     
     stage('env') {
       steps {
-       echo (env.BRANCH_NAME)    
+       echo (env.BRANCH_NAME)
+       echo (env.SERVER_CREDENTIALS)
       }        
     } 
           
