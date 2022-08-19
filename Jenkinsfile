@@ -24,16 +24,11 @@ pipeline {
     } 
           
     stage('Test') {
-      
-      when {
-        expression {
-          
-          env.BRANCH_NAME == "main"
-          
-        }
-      }
       steps {
         echo 'testujemy:'
+        withCredentials ([
+          usernamePassword(credentials: 'git', usernameVariable: USER, passwordVariable:PWD)
+          ])
        
       }
     }
