@@ -1,5 +1,12 @@
 pipeline {
   agent any 
+  parameters{
+  
+  }
+  
+  tools {
+    
+  }
   
   environment {
    NEW_VERSION ='1.3.0'
@@ -24,7 +31,7 @@ pipeline {
     } 
           
     stage('Test') {
-      withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
+      //withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
       //when {
         //expression {
           //USERNAME == 'kamilmaludzinski@gmail.com'
