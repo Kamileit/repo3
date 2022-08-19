@@ -27,7 +27,7 @@ pipeline {
       steps {
         echo 'testujemy:'
         withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-        echo USERNAME
+        echo PASSWORD
         // or inside double quotes for string interpolation
         echo "username is $USERNAME"
     }
