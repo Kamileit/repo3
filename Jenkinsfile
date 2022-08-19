@@ -19,6 +19,11 @@ pipeline {
   }
   
   stages {
+    stage('zmienne'){
+      steps{
+      echo params.zmienna_string
+      }
+    }
     
     stage('Build') {
       steps {
