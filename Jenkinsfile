@@ -26,8 +26,8 @@ pipeline {
           
         }
       }
-        steps {
-          echo 'testujemy:'
+      steps {
+        echo 'testujemy:'
        
       }
     }
