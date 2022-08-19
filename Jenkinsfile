@@ -20,9 +20,18 @@ pipeline {
         }
       }
         steps {
-          echo 'testujemy:' env.BRANCH_NAME
+          echo 'testujemy:'
         
       }
+      
+      stage('Build') {
+        steps {
+          echo 'Pulling...' + env.BRANCH_NAME
+          checkout scm
+        
+    }
+}
+      
     }
   }
     
