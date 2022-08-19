@@ -16,7 +16,7 @@ pipeline {
       when {
         expression {
           
-          env.BRANCH_NAME == "null"
+          env.BRANCH_NAME == ""
         }
       }
         steps {
