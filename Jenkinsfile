@@ -19,9 +19,12 @@ pipeline {
   }
   
   stages {
-    stage('zmienne'){
+    stage('init'){
       steps{
-      echo params.zmienna_string
+        script {
+         gv= load "script.groovy' 
+        }
+        
       }
     }
     
