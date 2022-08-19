@@ -1,7 +1,8 @@
 pipeline {
   agent any 
   parameters{
-  
+  choice (name: 'VERSION', choices: [1,2,3],description:' ')
+          
   }
   
   tools {
