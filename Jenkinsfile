@@ -6,11 +6,17 @@ pipeline {
     stage('Build') {
       steps {
         
-        echo ('Budujemy !!!!!!!!!!!!!!!!!!!' + BRANCH_NAME)
+        echo ('Budujemy !!!!!!!!!!!!!!!!!!!' + env.BRANCH_NAME)
         sh 'printenv'
       }
     }
-        
+    
+    stage('env') {
+      steps {
+       echo (env.BRANCH_NAME)    
+      }        
+    } 
+          
     stage('Test') {
       
       when {
