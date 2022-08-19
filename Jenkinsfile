@@ -24,7 +24,7 @@ pipeline {
     } 
           
     stage('Test') {
-      //withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
+      withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
       //when {
         //expression {
           //USERNAME == 'kamilmaludzinski@gmail.com'
