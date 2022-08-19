@@ -34,6 +34,7 @@ pipeline {
         
         echo ('Budujemy !!!!!!!!!!!!!!!!!!!' + env.BRANCH_NAME)
         echo (env.NEW_VERSION)
+        gv.buildApp()
         
       }
     }
