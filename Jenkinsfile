@@ -34,7 +34,7 @@ pipeline {
           message "co mi panie dasz"
           ok "done"
          parameters {
-           choice (name: 'WHERE', choices: [DEV,BRANCH,TRANK],description:' ')
+           choice (name: 'WHERE', choices: ['DEV','BRANCH','TRANK'],description:' ')
          }
         }
       
