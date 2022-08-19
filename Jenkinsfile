@@ -26,7 +26,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'testujemy:'
-        withCredentials([usernamePassword(credentialsId: 'git', username: 'USERPASS',userpass: 'USERPASS')]) 
+        withCredentials([usernamePassword(credentialsId: 'git', username: 'USERNAME',userpass: 'USERPASS')]) 
         {
           
         }
