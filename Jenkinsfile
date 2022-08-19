@@ -20,7 +20,7 @@ pipeline {
         }
       }
         steps {
-          echo ('testujemy')
+          echo 'testujemy:' env.BRANCH_NAME
         
       }
     }
