@@ -1,3 +1,4 @@
+CODE_CHANGES = getGitChanges()
 pipeline {
   agent any 
   
@@ -7,7 +8,7 @@ pipeline {
       steps {
         
         echo ('Budujemy !!!!!!!!!!!!!!!!!!!' + env.BRANCH_NAME)
-        sh 'printenv'
+        echo (CODE_CHANGES)
       }
     }
     
