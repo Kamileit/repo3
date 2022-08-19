@@ -6,7 +6,7 @@ pipeline {
     stage('Build') {
       steps {
         
-        echo ('Budujemy !!!!!!!!!!!!!!!!!!!' + env.BRANCH_NAME)
+        echo ('Budujemy !!!!!!!!!!!!!!!!!!!' + BRANCH_NAME)
         sh 'printenv'
       }
     }
@@ -16,7 +16,7 @@ pipeline {
       when {
         expression {
           
-          env.BRANCH_NAME == ""
+          env.BRANCH_NAME == " "
         }
       }
         steps {
