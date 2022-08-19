@@ -30,6 +30,14 @@ pipeline {
     }
     
     stage('Build') {
+       input {
+          message "co mi panie dasz"
+          ok "done"
+         parameters {
+           choice (name: 'WHERE', choices: [DEV,BRANCH,TRANK],description:' ')
+         }
+        }
+      
       steps {
         
         echo ('Budujemy !!!!!!!!!!!!!!!!!!!' + env.BRANCH_NAME)
@@ -60,6 +68,7 @@ pipeline {
       
       steps {
         echo 'testujemy bool:'
+         
         //echo USERNAME
         //withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) 
        
