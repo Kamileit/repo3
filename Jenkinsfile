@@ -3,7 +3,8 @@ pipeline {
   parameters{
   choice (name: 'VERSION', choices: [1,2,3],description:' ')
   booleanParam (name: "test" ,defaultValue: true)
-  booleanParam (name: "test" ,defaultValue: false)
+  booleanParam (name: "test2" ,defaultValue: false)
+  string (name: 'zmienna_string', description: ' ')
 
           
   }
