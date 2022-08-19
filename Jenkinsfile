@@ -3,7 +3,7 @@ pipeline {
   parameters{
   choice (name: 'VERSION', choices: [1,2,3],description:' ')
   booleanParam (name: "test" ,defaultValue: true)
-  booleanParam (name: "test" ,defaultValue: inne)
+  booleanParam (name: "test" ,defaultValue: false)
 
           
   }
