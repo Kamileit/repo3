@@ -21,17 +21,8 @@ pipeline {
       }
         steps {
           echo 'testujemy:'
-        
+       
       }
-      
-      stage('Build') {
-        steps {
-          echo 'Pulling...' + env.BRANCH_NAME
-          checkout scm
-        
-    }
-}
-      
     }
   }
     
