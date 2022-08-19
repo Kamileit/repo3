@@ -24,17 +24,17 @@ pipeline {
     } 
           
     stage('Test') {
-      withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
-      when {
-        expression {
-          USERNAME == 'kamilmaludzinski@gmail.com'
-        }
-      }
+      //withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
+      //when {
+        //expression {
+          //USERNAME == 'kamilmaludzinski@gmail.com'
+        //}
+      //}
       
       
       steps {
         echo 'testujemy:'
-        echo USERNAME
+        //echo USERNAME
         //withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) 
        
       }
