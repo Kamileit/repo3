@@ -8,7 +8,7 @@ pipeline {
       steps {
         
         echo ('Budujemy !!!!!!!!!!!!!!!!!!!' + env.BRANCH_NAME)
-        echo (CODE_CHANGES)
+        echo (env.CODE_CHANGES)
       }
     }
     
