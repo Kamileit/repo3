@@ -38,7 +38,7 @@ pipeline {
       //withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
       when {
         expression {
-           param.test == true
+           params.test == true
         }
       }
       
