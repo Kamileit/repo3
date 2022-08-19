@@ -29,6 +29,9 @@ pipeline {
         withCredentials ([
           usernamePassword(credentials: 'git', usernameVariable: USER, passwordVariable:PWD)
           ])
+        {
+          
+        }
        
       }
     }
