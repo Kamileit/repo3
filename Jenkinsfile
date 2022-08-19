@@ -2,6 +2,8 @@ pipeline {
   agent any 
   parameters{
   choice (name: 'VERSION', choices: [1,2,3],description:' ')
+  booleanParam (name: "test" ,defaultValue: true)
+
           
   }
   
@@ -21,7 +23,7 @@ pipeline {
         
         echo ('Budujemy !!!!!!!!!!!!!!!!!!!' + env.BRANCH_NAME)
         echo (env.NEW_VERSION)
-        sh "mvn install"
+        
       }
     }
     
@@ -34,15 +36,15 @@ pipeline {
           
     stage('Test') {
       //withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
-      //when {
-        //expression {
-          //USERNAME == 'kamilmaludzinski@gmail.com'
-        //}
-      //}
+      when {
+        expression {
+           param.test == true
+        }
+      }
       
       
       steps {
-        echo 'testujemy:'
+        echo 'testujemy bool:'
         //echo USERNAME
         //withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) 
        
