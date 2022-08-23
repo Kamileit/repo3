@@ -1,65 +1,30 @@
 pipeline {
   agent any 
-  parameters{
-  choice (name: 'VERSION', choices: [1,2,3],description:' ')
-  booleanParam (name: "test" ,defaultValue: true)
-  booleanParam (name: "test2" ,defaultValue: false)
-  string (name: 'zmienna_string', description: ' ')
 
-          
- 
-  
-  environment {
-   NEW_VERSION ='1.3.0'
-   SERVER_CREDENTIALS = credentials('git')
-  }
-  
   stages {
-    stage('init'){
-      steps{
-        script {
-         gv= load 'script.groovy'
-          
-        }
-        
-      }
-    }
+    
     
     stage('Build') {
-       input {
-          message "co mi panie dasz"
-          ok "done"
-         parameters {
-           choice (name: 'WHERE', choices: ['DEV','BRANCH','TRANK'],description:' ')
-         }
-        }
+      
       
       steps {
         
         echo ('Budujemy !!!!!!!!!!!!!!!!!!!' + env.BRANCH_NAME)
         echo (env.NEW_VERSION)
-        script {
-         gv.buildApp()
-          
-        }
+        
         
       }
     }
     
     stage('env') {
       steps {
-       echo (env.BRANCH_NAME)
-       echo (env.SERVER_CREDENTIALS)
+       
       }        
     } 
           
     stage('Test') {
-      //withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
-      when {
-        expression {
-           params.test == true
-        }
-      }
+      
+      
       
       
       steps {
