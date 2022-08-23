@@ -10,8 +10,8 @@ pipeline {
         
         stage('deploy') {
             steps {
-                sshagent(['ec2']) {
-                  sh 'cat /var/jenkins_home/workspace/pipepline@tmp/private_key*'
+                sshagent(['ec2-key']) {
+                  sh 'ssh -o StrictHostKeyChecking=no -l  ec2-user 18.212.70.143 uname -a'
                  
                 }
             }
