@@ -7,11 +7,7 @@ pipeline {
   string (name: 'zmienna_string', description: ' ')
 
           
-  }
-  
-  tools {
-    maven 'maven 3.8.6'
-  }
+ 
   
   environment {
    NEW_VERSION ='1.3.0'
@@ -69,8 +65,7 @@ pipeline {
       steps {
         echo 'testujemy bool:'
          
-        //echo USERNAME
-        //withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) 
+         
        
       }
     }
