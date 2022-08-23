@@ -1,55 +1,23 @@
 pipeline {
-  agent any 
+    agent any
 
-  stages {
-    
-    
-    stage('Build') {
+    stages {
+        stage('build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
       
-      
-      steps {
-        
-        echo ('Budujemy !!!!!!!!!!!!!!!!!!!' + env.BRANCH_NAME)
-        echo (env.NEW_VERSION)
-        
-        
-      }
-    }
-    
-    stage('env') {
-      steps {
-       
-      }        
-    } 
+      stages('deploy'){
+        steps {
+          sshagent(['ec2']) {
+             sh "ssh -o StrictHostKeyChecking=no ec2-user@18.212.70.143"
+             sh "uname -a"
+           }
           
-    stage('Test') {
-      
-      
-      
-      
-      steps {
-        echo 'testujemy bool:'
-         
-         
-       
+        }
       }
+      
     }
-  }
-    
-    
-  post {
-      
-      always { 
-        echo 'zawsze'
-      }
-
-      success {
-        echo 'sukces !!!!!!!!!!!!!!!!!!!!!1'
-      }
-      
-      failure {
-        echo 'fail'
-      }
-    }
-  }
+}
 
