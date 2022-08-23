@@ -2,15 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('build') {
             steps {
                 echo 'Hello World'
             }
         }
         
-        stage('Hello2') {
+        stage('deploy') {
             steps {
-                echo 'Hello World2'
+                esshagent(['ec2']) {
+             sh "ssh -o StrictHostKeyChecking=no ec2-user@18.212.70.143"
+             sh "uname -a"
+                }
             }
         }
     }
