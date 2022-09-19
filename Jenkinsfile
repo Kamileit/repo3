@@ -8,11 +8,16 @@ pipeline {
             }
         }
         
-        stage('deploy') {
-            steps {
-                sshagent(['ec2-key']) {
-                  sh 'ssh -t -o StrictHostKeyChecking=no ec2-user@54.88.229.139 uname -a ping 8.8.8.8'
-                  
+                    stage('deploy') {
+                        steps {
+                            script {
+                            def dockerCmd = 'docker run -d kmaludzi/docker-node-hello:1.0'
+                            sshagent(['ec2-key']) {
+                              sh "ssh -t -o StrictHostKeyChecking=no ec2-user@54.88.229.139 ${dockerCmd}"
+
+                            }
+                        }
+                    }
                 }
             }
         }
